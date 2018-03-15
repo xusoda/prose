@@ -17,7 +17,6 @@
 >&emsp;&emsp;可以表达为特定形式的概率分布（这主要为了基于一些代数特性上的方便）
 &emsp;&emsp;常见的指数族分布：normal，exponential，gamma，chi-squared，beta，Dirichlet，Bernoulli，categorical，Poisson，Wishart，inverse Wishart，geometric
 指数族分布是PDF可以表达为如下形式的概率分布集合：  
-
 &emsp;&emsp;$f_x(x|\theta)=h(x)e^{\eta(\theta)T(x)-A(x)}$&emsp;
 &emsp;&emsp;$\theta$是参数nature parameter，$h(x)$是underlying measure底层观测值，$T(x)$是充分统计量sufficient statistic（通常$T(x)=x$)， $A(x)$是对数正则参数log normalizer
 
