@@ -13,7 +13,7 @@
 
 ----------
 
-### Exponential family
+### Exponential Family
 >&emsp;&emsp;可以表达为特定形式的概率分布（这主要为了基于一些代数特性上的方便）  
 &emsp;&emsp;常见的指数族分布：normal，exponential，gamma，chi-squared，beta，Dirichlet，Bernoulli，categorical，Poisson，Wishart，inverse Wishart，geometric  
 &emsp;&emsp;指数族分布是PDF可以表达为如下形式的概率分布集合：  
@@ -22,6 +22,16 @@
 
 -------
 
-
-
-
+### MLE x MAP
+>$X$为iid数据的一组抽样$X=(x_1,x_2...x_n)$:  
+**MLE**:  
+&emsp;$\hat\theta_{mle} = argmaxP(X;\theta)$  
+&emsp;&emsp;&emsp;&emsp;$=argmin-\sum_{i=i}^{n}logP(x_i;\theta)$  
+**MAP**:
+&emsp;$\hat\theta_{map}=argmaxP(\theta|X)$
+&emsp;&emsp;&emsp;&emsp; $=argmaxP(X|\theta)P(\theta)/P(X)$
+&emsp;&emsp;&emsp;&emsp; $=argmin-\sum_{i=i}^{n}logP(x_i;\theta)-logP(\theta)$
+**当$\theta \sim N(0,\sigma^2) $**  
+&emsp;$P(\theta)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\theta^2}{2\sigma^2}}$  
+&emsp;$-logP(\theta)=-log\frac{1}{\sqrt{2\pi}\sigma} +\frac{\theta^2}{2\sigma^2}$
+&emsp;其形式等价于MLE with L2 Regularization
