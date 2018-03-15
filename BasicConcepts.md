@@ -27,11 +27,11 @@
 **MLE**:  
 &emsp;$\hat\theta_{mle} = argmaxP(X;\theta)$  
 &emsp;&emsp;&emsp;&emsp;$=argmin-\sum_{i=i}^{n}logP(x_i;\theta)$  
-**MAP**:
-&emsp;$\hat\theta_{map}=argmaxP(\theta|X)$
-&emsp;&emsp;&emsp;&emsp; $=argmaxP(X|\theta)P(\theta)/P(X)$
-&emsp;&emsp;&emsp;&emsp; $=argmin-\sum_{i=i}^{n}logP(x_i;\theta)-logP(\theta)$
+**MAP**:  
+&emsp;$\hat\theta_{map}=argmaxP(\theta|X)$  
+&emsp;&emsp;&emsp;&emsp; $=argmaxP(X|\theta)P(\theta)/P(X)$  
+&emsp;&emsp;&emsp;&emsp; $=argmin-\sum_{i=i}^{n}logP(x_i;\theta)-logP(\theta)$  
 **当$\theta \sim N(0,\sigma^2) $**  
 &emsp;$P(\theta)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\theta^2}{2\sigma^2}}$  
-&emsp;$-logP(\theta)=-log\frac{1}{\sqrt{2\pi}\sigma} +\frac{\theta^2}{2\sigma^2}$
+&emsp;$-logP(\theta)=-log\frac{1}{\sqrt{2\pi}\sigma} +\frac{\theta^2}{2\sigma^2}$  
 &emsp;其形式等价于MLE with L2 Regularization
