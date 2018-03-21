@@ -18,7 +18,7 @@
 &emsp;&emsp;常见的指数族分布：normal，exponential，gamma，chi-squared，beta，Dirichlet，Bernoulli，categorical，Poisson，Wishart，inverse Wishart，geometric  
 &emsp;&emsp;指数族分布是PDF可以表达为如下形式的概率分布集合：  
 &emsp;&emsp;$f_x(x|\theta)=h(x)e^{\eta(\theta)T(x)-A(x)}$  
-&emsp;&emsp;$\theta$是参数nature parameter，$h(x)$是underlying measure底层观测值，$T(x)$是充分统计量sufficient statistic（通常$T(x)=x$)， $A(x)$是对数正则参数log normalizer
+&emsp;&emsp;$\theta$是参数Nature Parameter，$h(x)$是underlying measure底层观测值，$T(x)$是充分统计量Sufficient Statistic（通常$T(x)=x$)， $A(x)$是归一化常量Normalization Constant
 
 -------
 
@@ -31,7 +31,24 @@
 &emsp;$\hat\theta_{map}=argmaxP(\theta|X)$  
 &emsp;&emsp;&emsp;&emsp; $=argmaxP(X|\theta)P(\theta)/P(X)$  
 &emsp;&emsp;&emsp;&emsp; $=argmin-\sum_{i=i}^{n}logP(x_i;\theta)-logP(\theta)$  
-**当$\theta \sim N(0,\sigma^2) $**  
+&emsp;**当$\theta \sim N(0,\sigma^2): $**  
 &emsp;$P(\theta)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\theta^2}{2\sigma^2}}$  
 &emsp;$-logP(\theta)=-log\frac{1}{\sqrt{2\pi}\sigma} +\frac{\theta^2}{2\sigma^2}$  
-&emsp;其形式等价于MLE with L2 Regularization
+&emsp;其形式等价于MLE with L2 Regularization  
+&emsp;MLE做的是经验风险最小化（Empricial Risk Minimization）。而MAP则是将模型复杂度作为先验概率的结构风险最小化（Structural Risk Minimization）  
+>>结构风险=经验风险+置信风险  
+经验风险可以由对已知样本的误差来表示，而置信风险则与已知样本数量成反比（样本越多，置信风险越小）、与目标函数VC Dimension成正比（目标函数可能性越多，复杂，推广能力越差，风险越大）
+
+---------
+### Analytical Solution && Numerical Solution
+>Analytical Solution(closed-form solution):  
+&emsp;use general symbolic manipulations
+Numerical Solution:  
+&emsp;use numerical approximation
+
+-----
+### 频率学派 x 贝叶斯
+>频率学派通过总体信息和样本信息进行推断，贝叶斯通过总体信息，样本信息，以及先验信息推断。  
+频率学派认为待估参数虽然是未知的，但是为常数。贝叶斯学派认为待估参数是变化的随机变量（它的分布为先验分布）
+
+-----------
